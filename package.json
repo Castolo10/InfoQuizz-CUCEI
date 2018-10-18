@@ -1,0 +1,43 @@
+{
+  "name": "ciberquizz-cucei",
+  "version": "1.0.0",
+  "description": "Sitio enfocado a ser un juego de preguntas sobre topicos de informatica",
+  "main": "index.js",
+  "scripts": {
+    "test": "https://github.com/Castolo10/CiberQuizz-CUCEI.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Castolo10/CiberQuizz-CUCEI.git"
+  },
+  "keywords": [
+    "quizz",
+    "cucei",
+    "informatica"
+  ],
+  "author": "Daniel Castolo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Castolo10/CiberQuizz-CUCEI/issues"
+  },
+  "homepage": "https://github.com/Castolo10/CiberQuizz-CUCEI#readme",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-promise-router": "^3.0.3",
+    "http-errors": "^1.7.1",
+    "pg": "^7.5.0",
+    "pg-promise": "^8.5.0"
+  }
+}

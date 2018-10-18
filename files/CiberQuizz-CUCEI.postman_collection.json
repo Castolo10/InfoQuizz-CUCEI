@@ -1,0 +1,1345 @@
+{
+	"info": {
+		"_postman_id": "6de114ab-93c4-43cf-a299-c177ba7a24f2",
+		"name": "CiberQuizz-CUCEI",
+		"description": "RESTfullAPI para el proyecto CiberQuizz-CCUCEI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"description": null,
+			"item": [
+				{
+					"name": "Add category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "category",
+									"value": "a",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "a",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/categories",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"categories"
+							]
+						},
+						"description": "Agrega una categoria"
+					},
+					"response": []
+				},
+				{
+					"name": "List of categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/categories",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"categories"
+							]
+						},
+						"description": "Permite visualizar la lista de categorías"
+					},
+					"response": []
+				},
+				{
+					"name": "Choose categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/categories/:category",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"categories",
+								":category"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": ""
+								}
+							]
+						},
+						"description": "Permite elegir (visualizar) la categoría"
+					},
+					"response": []
+				},
+				{
+					"name": "Modify categories",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "category",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "informatica",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/categories/:category",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"categories",
+								":category"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": ""
+								}
+							]
+						},
+						"description": "Permite modificar la categoría"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"description": null,
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/login/:username/:password",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"login",
+								":username",
+								":password"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": ""
+								},
+								{
+									"key": "password",
+									"value": ""
+								}
+							]
+						},
+						"description": "Inicio de sesión para usuarios y administradores"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Play",
+			"description": null,
+			"item": [
+				{
+					"name": "Challenge friend",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "date",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "player1",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "player2",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/play",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play"
+							]
+						},
+						"description": "Permite a los usuarios retar a amigos"
+					},
+					"response": []
+				},
+				{
+					"name": "Play",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/play/:idGame",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								":idGame"
+							],
+							"variable": [
+								{
+									"key": "idGame",
+									"value": ""
+								}
+							]
+						},
+						"description": "Permite a los usuarios jugar"
+					},
+					"response": []
+				},
+				{
+					"name": "List of games",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/play/:idGame",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								":idGame"
+							],
+							"variable": [
+								{
+									"key": "idGame",
+									"value": ""
+								}
+							]
+						},
+						"description": "Entrega la lista de juegos"
+					},
+					"response": []
+				},
+				{
+					"name": "Match history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/play/:username",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": ""
+								}
+							]
+						},
+						"description": "Entrega el historial de partidas"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Game",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/play/:idGame",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								":idGame"
+							],
+							"variable": [
+								{
+									"key": "idGame",
+									"value": ""
+								}
+							]
+						},
+						"description": "Borra ua instancia del juego"
+					},
+					"response": []
+				},
+				{
+					"name": "Add to details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idGame",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "idQues",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resP1",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resP2",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/play/game",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								"game"
+							]
+						},
+						"description": "Se agrega a la tabla con detalles de ls partida actual"
+					},
+					"response": []
+				},
+				{
+					"name": "Find details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idGame",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "idQues",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resP1",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resP2",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/play/game/:idGame",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								"game",
+								":idGame"
+							],
+							"variable": [
+								{
+									"key": "idGame",
+									"value": ""
+								}
+							]
+						},
+						"description": "Se buscan detalles de la partida"
+					},
+					"response": []
+				},
+				{
+					"name": "List of details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idGame",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "idQues",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resP1",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resP2",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/play/game",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								"game"
+							]
+						},
+						"description": "Se muestra la lista de lo contenido en la tabla de detalles"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idGame",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "idQues",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resP1",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resP2",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/play/game",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								"game"
+							]
+						},
+						"description": "Permite editar el contenido de los detalles"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete details",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idGame",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "idQues",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/play/game",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"play",
+								"game"
+							]
+						},
+						"description": "Permite eliminar el contenido de los detalles"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Questions",
+			"description": null,
+			"item": [
+				{
+					"name": "Add question",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "pregunta",
+									"type": "text"
+								},
+								{
+									"key": "option_1",
+									"value": "opcionuno",
+									"type": "text"
+								},
+								{
+									"key": "option_2",
+									"value": "opciondos",
+									"type": "text"
+								},
+								{
+									"key": "solution",
+									"value": "correcto",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "informatica",
+									"type": "text"
+								},
+								{
+									"key": "exist",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/questions",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"questions"
+							]
+						},
+						"description": "Permite agregar una pregunta"
+					},
+					"response": []
+				},
+				{
+					"name": "See question",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/questions/:idQuest",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"questions",
+								":idQuest"
+							],
+							"variable": [
+								{
+									"key": "idQuest",
+									"value": ""
+								}
+							]
+						},
+						"description": "Permite visualizar la preguntas"
+					},
+					"response": []
+				},
+				{
+					"name": "List of questions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/questions",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"questions"
+							]
+						},
+						"description": "Permite visualizar la lista de preguntas"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit question",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idQuest",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "opt1",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "opt2",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "solution",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/questions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"questions"
+							]
+						},
+						"description": "Permite aprobar una pregunta"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete question",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idQuest",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/questions",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"questions"
+							]
+						},
+						"description": "Permite eliminar una pregunta"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "defae264-37d5-45ed-98da-dc1e6c22bfb1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a6f47fa2-3913-4e69-aa14-ecb674ca707a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": null,
+			"item": [
+				{
+					"name": "Add user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Juan23",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Juan",
+									"type": "text"
+								},
+								{
+									"key": "mail",
+									"value": "Juan@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "roles",
+									"value": "false",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "exist",
+									"value": "true",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/users",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Permite la creación de una cuenta de usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "See user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/users/:username",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": ""
+								}
+							]
+						},
+						"description": "Permite la visualización de un perfil de un usuario en particular"
+					},
+					"response": []
+				},
+				{
+					"name": "See list user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/users",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Permite la visualización de los perfil de los usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Modify user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Juan24",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Juan",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "mail",
+									"value": "Juan@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "roles",
+									"value": "false",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/users/:username",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": ""
+								}
+							]
+						},
+						"description": "Permite modificar la información de algún perfil de usuario en particular"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Juan24",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/users",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Permite eliminar la información de algún perfil de usuario en particular"
+					},
+					"response": []
+				},
+				{
+					"name": "Request for friendship",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Jose",
+									"type": "text"
+								},
+								{
+									"key": "friend",
+									"value": "Juanito03",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/user/friends",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"user",
+								"friends"
+							]
+						},
+						"description": "Permite enviar la solicitud a un amigo en la plataforma"
+					},
+					"response": []
+				},
+				{
+					"name": "Find friend",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Jose",
+									"type": "text"
+								},
+								{
+									"key": "friend",
+									"value": "Juanito03",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/user/friends/:username",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"user",
+								"friends",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": ""
+								}
+							]
+						},
+						"description": "Permite bucar a un amigo que ya has agregado"
+					},
+					"response": []
+				},
+				{
+					"name": "List of friends",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{app}}/user/friends",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"user",
+								"friends"
+							]
+						},
+						"description": "Permite agregar un amigo en la plataforma"
+					},
+					"response": []
+				},
+				{
+					"name": "Accept request for friendship",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "friend",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/user/friends/request",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"user",
+								"friends",
+								"request"
+							]
+						},
+						"description": "Permite aceptar la solicitud enviada"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete friend",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Juan",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "friendUsername",
+									"value": "Juan1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app}}/users/friends",
+							"host": [
+								"{{app}}"
+							],
+							"path": [
+								"users",
+								"friends"
+							]
+						},
+						"description": "Permite eliminar a un usuario de tu lista de amigos"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "324ba160-fdff-47fe-9bc1-05da3564fff8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b24c3166-b333-4ad6-af89-1bd244f061be",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
