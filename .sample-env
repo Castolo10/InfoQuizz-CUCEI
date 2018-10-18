@@ -1,0 +1,5 @@
+PORT=3000
+DB_USER=username
+DB_PASSWORD=password
+DB_NAME=sampledb
+DB_HOST=dbhost

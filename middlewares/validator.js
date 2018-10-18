@@ -20,7 +20,7 @@ const regexErrors = {
 
 function error(element, errorMsg) {
     const html = `<p class="error text-danger">${errorMsg}</p>`;
-    $(html).insertAfter(element);
+    (html).insertAfter(element);
 }
 
 exports.validate = (element) => {

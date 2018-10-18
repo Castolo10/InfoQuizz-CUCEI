@@ -4,7 +4,8 @@ const model = require('../models/users');
 
 // FIXME Cada controlador debe ser una clase
 // FIXME Todos los metodos que acceden al modelo y por lo cual son async, deben tener su async-await
-// FIXME Cada metodo del controlador debe tener manejo de errores en caso de que el modelo no obtenga datos
+// FIXME Cada metodo del controlador debe tener manejo de errores en caso de que
+// el modelo no obtenga datos
 
 exports.add = (req, res) => {
     const response = model.add(req.body.username, req.body.name,
