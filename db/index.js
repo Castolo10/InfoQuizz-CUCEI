@@ -1,19 +1,23 @@
-const promise = require('bluebird');
+const { Client } = require('pg');
 
-const options = {
-    // Initialization Options
-    promiseLib: promise,
-};
-
-const pgp = require('pg-promise')(options);
-
-const connectionString = `postgres://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.PORT}/${process.env.DB_NAME}`;
+// const connectionString = `postgres://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`;
 // FIXME Falta manejo de errores para los casos en que las conexiones fallen
-const db = pgp(connectionString);
+
+const connectionString = 'postgres://postgres:admin@localhost/CiberQuizz';
+// const connectionString = 'postgres://chzvqhovtoywzc:bcbac62e65167d66c203c9ed750b8220bdf3497d21e3d3efafb11b4788e9ab60@ec2-54-221-225-11.compute-1.amazonaws.com/dbhd5eod9kf1cp';
+const client = new Client(connectionString);
 
 // FIXME TODOS los metodos deben tener su manejo de errores
 
-exports.INSERT = (tableName, columns, values, contition = null, returning = null) => {
+client.connect((err) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log('Database Started');
+    }
+});
+
+exports.INSERT = async (tableName, columns, values, contition = null, returning = null) => {
     let sql = '';
     sql += `INSERT INTO ${tableName} (${columns})`;
     sql += ` VALUES (${values})`;
@@ -23,19 +27,20 @@ exports.INSERT = (tableName, columns, values, contition = null, returning = null
     if (returning !== null) {
         sql += ` RETURNING ${returning}`;
     }
-
-    const resp = db.many(sql);
+    console.log(sql);
+    const resp = await client.query(sql);
     return resp;
 };
 
-exports.SELECT = (tableName, columns = '*', condition = null) => {
+exports.SELECT = async (tableName, columns = '*', condition = null) => {
     let sql = '';
     sql += `SELECT ${columns}`;
     sql += ` FROM ${tableName}`;
     if (condition !== null) {
         sql += ` WHERE ${condition}`;
     }
-    const resp = db.many(sql);
+    console.log(sql);
+    const resp = await client.query(sql);
     return resp;
 };
 
@@ -47,7 +52,8 @@ exports.UPDATE = async (tableName, setters, condition, returning = null) => {
     if (returning !== null) {
         sql += ` RETURNING ${returning}`;
     }
-    const { rows } = await db.many(sql);
+    console.log(sql);
+    const { rows } = await client.query(sql);
     return rows;
 };
 
@@ -55,12 +61,14 @@ exports.DELETE = async (tableName, condition) => {
     let sql = '';
     sql += `DELETE FROM ${tableName}`;
     sql += ` WHERE ${condition}`;
-    const { rows } = await db.many(sql);
+    console.log(sql);
+    const { rows } = await client.query(sql);
     return rows;
 };
 
 exports.NOW = async () => {
     const sql = 'SELECT NOW()';
-    const { rows } = await db.many(sql);
+    console.log(sql);
+    const { rows } = await client.query(sql);
     return rows;
 };

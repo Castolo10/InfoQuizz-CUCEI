@@ -40,7 +40,7 @@ router.get('/', (req, res) => {
 // FIXME Falta un middleware que valide todo el cuerpo del request
 // FIXME Falta un middleware que valide que :username es un identificador con
 // el formato definido, ejem: es un numero en cierto rango
-router.put('/:username', (req, res) => {
+router.put('/', (req, res) => {
     const response = controller.edit(req, res);
     response.then((result) => {
         res.json(result.rows);

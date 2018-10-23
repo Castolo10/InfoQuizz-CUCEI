@@ -7,30 +7,30 @@ const model = require('../models/questions');
 // FIXME Cada metodo del controlador debe tener manejo de errores en caso de que
 // el modelo no obtenga datos
 
-exports.add = (req, res) => {
+exports.add = (req) => {
     const response = model.add(req.body.content, req.body.opt1,
         req.body.opt2, req.body.solution, req.body.category, req.body.exist, req.body.status);
         // FIXME Cuando se crean recursos, el responseCode debe ser 201
-    res.send(response);
+    return response;
 };
 
-exports.find = (req, res) => {
+exports.find = (req) => {
     const response = model.find(req.params.idQuest);
-    res.send(response);
+    return response;
 };
 
-exports.list = (req, res) => {
+exports.list = () => {
     const response = model.list();
-    res.send(response);
+    return response;
 };
 
-exports.edit = (req, res) => {
+exports.edit = (req) => {
     const response = model.edit(req.body.idQuest, req.body.content, req.body.opt1,
         req.body.opt2, req.body.solution, req.body.category, req.body.status);
-    res.send(response);
+    return response;
 };
 
-exports.delete = (req, res) => {
+exports.delete = (req) => {
     const response = model.delete(req.body.idQuest);
-    res.send(response);
+    return response;
 };

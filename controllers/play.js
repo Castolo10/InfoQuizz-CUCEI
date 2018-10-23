@@ -8,55 +8,55 @@ const model = require('../models/play');
 // el modelo no obtenga datos
 
 
-exports.addGame = (req, res) => {
+exports.addGame = (req) => {
     const response = model.addGame(req.body.date, req.body.player1, req.body.player2);
     // FIXME Cuando se crean recursos, el responseCode debe ser 201
-    res.send(response);
+    return response;
 };
 
-exports.findGame = (req, res) => {
+exports.findGame = (req) => {
     const response = model.findGame(req.params.idGame);
-    res.send(response);
+    return response;
 };
 
-exports.listOfGames = (req, res) => {
+exports.listOfGames = () => {
     const response = model.listOfGames();
-    res.send(response);
+    return response;
 };
 
-exports.matchHistory = (req, res) => {
+exports.matchHistory = (req) => {
     const response = model.matchHistory(req.params.username);
-    res.send(response);
+    return response;
 };
 
-exports.deleteGame = (req, res) => {
+exports.deleteGame = (req) => {
     const response = model.deleteGame(req.params.idGame);
-    res.send(response);
+    return response;
 };
 
-exports.addToDetails = (req, res) => {
+exports.addToDetails = (req) => {
     const response = model.addToDetails(req.body.idGame, req.body.idQues,
         req.body.resP1, req.body.resP2);
-    res.send(response);
+    return response;
 };
 
-exports.findDetails = (req, res) => {
+exports.findDetails = (req) => {
     const response = model.findDetails(req.params.idGame);
-    res.send(response);
+    return response;
 };
 
-exports.listOfDetalis = (req, res) => {
+exports.listOfDetalis = () => {
     const response = model.listOfDetalis();
-    res.send(response);
+    return response;
 };
 
-exports.editDetails = (req, res) => {
+exports.editDetails = (req) => {
     const response = model.editDetails(req.body.idGame, req.body.idQues,
         req.body.resP1, req.body.resP2);
-    res.send(response);
+    return response;
 };
 
-exports.deleteDetails = (req, res) => {
+exports.deleteDetails = (req) => {
     const response = model.deleteDetails(req.body.idGame, req.body.idQues);
-    res.send(response);
+    return response;
 };

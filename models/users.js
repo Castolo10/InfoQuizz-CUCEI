@@ -13,7 +13,7 @@ const db = require('../db');
 
 
 exports.add = (username, name, mail, password, roles = false, exist = false) => {
-    const response = db.INSERT('user',
+    const response = db.INSERT('users',
         'username, name, mail, password, roles, exist',
         `'${username}','${name}','${mail}','${password}','${roles}','${exist}'`,
         null,
@@ -22,42 +22,42 @@ exports.add = (username, name, mail, password, roles = false, exist = false) => 
 };
 
 exports.find = (username) => {
-    const response = db.SELECT('user',
+    const response = db.SELECT('users',
         '*',
         `username='${username}'`);
     return response;
 };
 
 exports.list = () => {
-    const response = db.SELECT('user');
+    const response = db.SELECT('users');
     return response;
 };
 
-exports.edit = (username, name, mail, password, roles) => {
-    const response = db.UPDATE('user',
-        `name='${name}', mail='${mail}', password='${password}', roles='${roles}'`,
-        `username=${username}`,
+exports.edit = (username, name, mail, password) => {
+    const response = db.UPDATE('users',
+        `name='${name}',mail='${mail}',password='${password}'`,
+        `username='${username}'`,
         '*');
     return response;
 };
 
 exports.delete = (username) => {
-    const response = db.UPDATE('user', 'exist=false',
-        `username=${username}`);
+    const response = db.UPDATE('users', 'exist=false',
+        `username='${username}'`);
     return response;
 };
 
 exports.addFriend = (username, friend) => {
     const response = db.INSERT('friendlist',
         'username, friend_username, status_req',
-        `username='${username}','friend_username='${friend}', false`);
+        `'${username}','${friend}', 'false'`, null, '*');
     return response;
 };
 
 exports.findFriend = (username, friend) => {
     const response = db.SELECT('friendlist',
         'friend_username',
-        `username=${username} AND friend_username='${friend}' AND status_req=true`);
+        `username='${username}' AND friend_username='${friend}' AND status_req=true`);
     return response;
 };
 
@@ -71,7 +71,7 @@ exports.friendList = (username) => {
 exports.editStatusFriend = (username, friendUsername) => {
     const response = db.UPDATE('friendlist',
         'status_req=true',
-        `username='${username}'AND friend_username='${friendUsername}'`);
+        `username='${username}' AND friend_username='${friendUsername}'`);
     return response;
 };
 

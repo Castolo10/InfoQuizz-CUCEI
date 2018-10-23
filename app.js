@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 
 app.listen(3000, () => { // FIXME El puerto debe ser un valor variable tomado de env
-    console.log(`Example app listening on port ${process.env.PORT}`);
+    console.log(`Example app listening on port 3000`);
 });
 
 module.exports = app; // FIXME No hay necesidad de exportar app

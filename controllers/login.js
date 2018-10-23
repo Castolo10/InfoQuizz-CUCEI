@@ -7,7 +7,7 @@ const model = require('../models/login');
 // FIXME Cada metodo del controlador debe tener manejo de errores en caso de que
 // el modelo no obtenga datos
 
-exports.auth = (req, res) => {
+exports.auth = (req) => {
     const response = model.auth(req.params.username, req.params.password);
-    res.send(response);
+    return response;
 };
